@@ -112,7 +112,7 @@ public class Plane : MonoBehaviour
             }
             else
             {
-                rb.AddTorque(-baseTorqueMultiplier * 2f * rb.rotation);
+                rb.AddTorque(-baseTorqueMultiplier * 5f * rb.rotation);
             }
 
             // Rotation depending on front wheight

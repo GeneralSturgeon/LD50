@@ -20,15 +20,21 @@ public class CameraFollow : MonoBehaviour
     {
         float YPos;
 
-        if (objToFollow.position.y > YposMax)
+        if (objToFollow != null)
         {
-            YPos = objToFollow.position.y - YposMax;
-        }
-        else
+            if (objToFollow.position.y > YposMax)
+            {
+                YPos = objToFollow.position.y - YposMax;
+            }
+            else
+            {
+                YPos = 0f;
+            }
+        } else
         {
             YPos = 0f;
         }
-
+        
         if (StateManager.instance.currentGameState == StateManager.GameState.Flight && lockedOnPlane)
         {
             transform.position = new Vector3(objToFollow.position.x + XposOffset, YPos, -10f);

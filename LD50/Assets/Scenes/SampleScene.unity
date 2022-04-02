@@ -598,12 +598,12 @@ MonoBehaviour:
   pokesPanel: {fileID: 2015004696}
   pokes: 020000000300000004000000050000000600000007000000
   startingForce:
-  - 20
-  - 24
-  - 28
+  - 25
+  - 30
   - 35
   - 45
-  - 60
+  - 55
+  - 65
   lift:
   - 0.1
   - 0.11
@@ -613,14 +613,14 @@ MonoBehaviour:
   - 0.15
   frontWeight:
   - 0.2
-  - 0.23
+  - 0.22
   - 0.26
   - 0.3
-  - 0.36
-  - 0.45
+  - 0.35
+  - 0.4
   aOA:
   - 20
-  - 24
+  - 25
   - 32
   - 42
   - 55
@@ -869,7 +869,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: costs.Array.data[0]
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[3]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[4]
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4191448503594535399, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_Pivot.x
@@ -1499,6 +1515,26 @@ PrefabInstance:
     - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: upgradeType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[4]
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4191448503594535399, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_Pivot.x
@@ -3050,6 +3086,26 @@ PrefabInstance:
     - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: upgradeType
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[3]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[4]
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4191448503594535399, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_Pivot.x
@@ -4614,6 +4670,18 @@ PrefabInstance:
       propertyPath: upgradeType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[3]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[4]
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4191448503594535399, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5375,7 +5443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -5384,7 +5452,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.5886792, b: 0.5886792, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -5434,7 +5502,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6778,7 +6846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7267,6 +7335,26 @@ PrefabInstance:
     - target: {fileID: 1918788172211985768, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038310017905994990, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
+      propertyPath: costs.Array.data[4]
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4191448503594535399, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_Pivot.x

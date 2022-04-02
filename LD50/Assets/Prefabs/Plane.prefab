@@ -181,10 +181,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   frontWheightForce: 0.2
-  baseTorqueMultiplier: 0.02
+  baseTorqueMultiplier: 0.007
   baseSpeedMultiplier: 0.02
-  baseClickForce: 50
-  baseClickTorque: 60
+  baseClickForce: 60
+  baseClickTorque: 40
   clickCurve:
     serializedVersion: 2
     m_Curve:
