@@ -27,6 +27,10 @@ public class GameController : MonoBehaviour
     private TextMeshProUGUI currencyText;
     [SerializeField]
     private Spawner spawner;
+    [HideInInspector]
+    public int remainingPokes;
+    [SerializeField]
+    private PokesPanel pokesPanel;
 
     public int[] pokes;
     public float[] startingForce;
@@ -53,6 +57,12 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        remainingPokes = pokes[pokesUpgrades];
+        UpdatePokes();
     }
 
 
@@ -97,8 +107,15 @@ public class GameController : MonoBehaviour
         crashPanelAnim.ResetTrigger("In");
         currentDistance = 0f;
         StateManager.instance.currentGameState = StateManager.GameState.Menu;
+        remainingPokes = pokes[pokesUpgrades];
+        UpdatePokes();
         spawner.Spawn();
 
+    }
+
+    public void UpdatePokes()
+    {
+        pokesPanel.UpdatePanel();
     }
 
     public void Upgrade(UpgradeSlot.UpgradeType _type)

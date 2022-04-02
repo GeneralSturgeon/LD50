@@ -52,7 +52,16 @@ public class Plane : MonoBehaviour
 
         if (StateManager.instance.currentGameState == StateManager.GameState.Flight && Input.GetMouseButtonUp(0))
         {
-            AddForceOnClick();
+            if(GameController.instance.remainingPokes > 0)
+            {
+                AddForceOnClick();
+                GameController.instance.remainingPokes--;
+                GameController.instance.UpdatePokes();
+            } else
+            {
+                // PLAY SOUND
+            }
+             
         }
 
         // Initialize
