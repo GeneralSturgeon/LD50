@@ -2221,9 +2221,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: dfef9f3cc4c08cf4dac052e24fbb7af5, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 96f58022d53d38842822786e70ec5490, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd75ddc0805b2414b9ce50d493684941, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3233,7 +3233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062720250000477576, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_fontSize
-      value: 15.4
+      value: 17.3
       objectReference: {fileID: 0}
     - target: {fileID: 7548959662071797238, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -15378,9 +15378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d26cff2aee003d419fdbddb41be35f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normal: {fileID: 2800000, guid: 135608c75e3dc5d41aaaf13d1ac1868c, type: 3}
-  hold: {fileID: 2800000, guid: 08554301913be9442952e6df50268f92, type: 3}
-  hotspot: {x: 8, y: 0}
+  normal: {fileID: 2800000, guid: 85f4395a1068c744892683f9727919cd, type: 3}
+  hold: {fileID: 2800000, guid: 093851d2e35b4b842809a489465c3a3c, type: 3}
+  hotspot: {x: 4, y: 0}
 --- !u!4 &968155218
 Transform:
   m_ObjectHideFlags: 0
@@ -15584,7 +15584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062720250000477576, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_fontSize
-      value: 15.4
+      value: 17.3
       objectReference: {fileID: 0}
     - target: {fileID: 7548959662071797238, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -20573,7 +20573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062720250000477576, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_fontSize
-      value: 15.4
+      value: 17.3
       objectReference: {fileID: 0}
     - target: {fileID: 7548959662071797238, guid: 84b9d9e2dbc61f643ba369db5a5096d3, type: 3}
       propertyPath: m_AnchorMax.y
