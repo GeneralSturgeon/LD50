@@ -47,6 +47,9 @@ public class GameController : MonoBehaviour
     public int frontWeightUpgrades = 0;
     public int aOAUpgrades = 0;
 
+    [SerializeField]
+    private AudioSource clickAudio;
+
 
     private void Awake()
     {
@@ -105,6 +108,7 @@ public class GameController : MonoBehaviour
 
     public void Restart()
     {
+        PlayClick();
         crashPanelAnim.SetTrigger("Out");
         crashPanelAnim.ResetTrigger("In");
         currentDistance = 0f;
@@ -145,5 +149,10 @@ public class GameController : MonoBehaviour
                 aOAUpgrades++;
                 break;
         }
+    }
+
+    public void PlayClick()
+    {
+        clickAudio.Play();
     }
 }

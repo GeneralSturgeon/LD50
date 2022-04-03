@@ -46,6 +46,7 @@ public class UpgradeSlot : MonoBehaviour
 
     public void Upgrade()
     {
+        GameController.instance.PlayClick();
         GameController.instance.Upgrade(upgradeType);
         GameController.instance.RemoveCurrency(costs[currentUpgrade]);
         dots[currentUpgrade].color = newColor;

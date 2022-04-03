@@ -23,7 +23,7 @@ public class Plane : MonoBehaviour
 
     private float currentLift;
     private float currentSpeedAddition;
-    private const float maxRot = 60f;
+    private const float maxRot = 85f;
 
     [SerializeField]
     private Transform spawner;
@@ -36,6 +36,21 @@ public class Plane : MonoBehaviour
     private float tick = 0f;
     private const float WAIT_TIME = 0.2f;
     private bool isWaiting = false;
+
+    [SerializeField]
+    private AudioSource leavesAudio;
+    [SerializeField]
+    private AudioSource pokeAudio;
+    [SerializeField]
+    private AudioSource pokeDeniedAudio;
+    [SerializeField]
+    private AudioSource deathAudio;
+    [SerializeField]
+    private AudioSource pickupAudio;
+    [SerializeField]
+    private AudioSource swooshAudio;
+
+
 
     private void Awake()
     {
@@ -62,9 +77,10 @@ public class Plane : MonoBehaviour
                 AddForceOnClick();
                 GameController.instance.remainingPokes--;
                 GameController.instance.UpdatePokes();
+                pokeAudio.Play();
             } else
             {
-                // PLAY SOUND
+                pokeDeniedAudio.Play();
             }
              
         }
@@ -75,11 +91,10 @@ public class Plane : MonoBehaviour
             rb.simulated = true;
             Vector2 force = (aim.position - spawner.position).normalized * startForce;
             rb.AddForce(force);
-            Debug.Log(force);
-
-
             StateManager.instance.currentGameState = StateManager.GameState.Flight;
             FindObjectOfType<CameraFollow>().InitiateFlightFollow();
+            leavesAudio.Play();
+
         }
 
 
@@ -115,16 +130,18 @@ public class Plane : MonoBehaviour
             // Lift + speed depending on AOA
             rb.AddForce(new Vector2(currentSpeedAddition, currentLift));
 
+
+            
             // Rotation and speed depending on AOA
             if (rb.rotation <= maxRot && rb.rotation >= -maxRot)
             {
-                rb.AddTorque(baseTorqueMultiplier * rb.rotation);
+                //rb.AddTorque(baseTorqueMultiplier * rb.rotation);
             }
             else
             {
                 rb.AddTorque(-baseTorqueMultiplier * 5f * rb.rotation);
             }
-
+            
             // Rotation depending on front wheight
 
             rb.AddTorque(-frontWheightForce);
@@ -157,9 +174,9 @@ public class Plane : MonoBehaviour
         if (!isWaiting)
         {
             // Adds upward rotation
-            rb.AddTorque(baseClickTorque);
+            //rb.AddTorque(baseClickTorque/2f);
             // Add upward force
-            rb.AddForce(new Vector2(baseClickXForce, baseClickForce));
+            rb.AddForce(new Vector2(baseClickXForce/2f, baseClickForce/2f));
             isWaiting = true;
         } 
     }
@@ -169,6 +186,7 @@ public class Plane : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             StateManager.instance.currentGameState = StateManager.GameState.Crash;
+            deathAudio.Play();
             col.isTrigger = false;
             GameController.instance.OpenCrashPanel();
             transform.SetParent(null);
@@ -179,6 +197,11 @@ public class Plane : MonoBehaviour
         {
             AddForceOnPickup();
             collision.gameObject.GetComponent<Pickup>().Hide();
+            pickupAudio.Play();
+            if(rb.velocity.y > 1f)
+            {
+                swooshAudio.Play();
+            }
         }
     }
 
