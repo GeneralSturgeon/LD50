@@ -18,6 +18,5 @@ public class PokesPanel : MonoBehaviour
                 pokes[x].SetActive(false);
             }
         }
-        Debug.Log(GameController.instance.remainingPokes);
     }
 }

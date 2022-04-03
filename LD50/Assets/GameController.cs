@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     private TextMeshProUGUI menuDistanceText;
     [SerializeField]
     private TextMeshProUGUI rewardText;
-    private const float DISTANCE_MULTIPLIER = 4;
+    private const float DISTANCE_MULTIPLIER = 2;
     [SerializeField]
     private UpgradeSlot[] upgradeSlots;
     [SerializeField]
@@ -31,6 +31,8 @@ public class GameController : MonoBehaviour
     public int remainingPokes;
     [SerializeField]
     private PokesPanel pokesPanel;
+    [SerializeField]
+    private PickupSpawner pickupSpawner;
 
     public int[] pokes;
     public float[] startingForce;
@@ -71,7 +73,7 @@ public class GameController : MonoBehaviour
 
         crashPanelAnim.SetTrigger("In");
         crashPanelAnim.ResetTrigger("Out");
-        currentReward = Mathf.FloorToInt(currentDistance / DISTANCE_MULTIPLIER * 2);
+        currentReward = Mathf.FloorToInt(currentDistance / DISTANCE_MULTIPLIER);
         currency += currentReward;
         UpdateUI();
     }
@@ -109,6 +111,7 @@ public class GameController : MonoBehaviour
         StateManager.instance.currentGameState = StateManager.GameState.Menu;
         remainingPokes = pokes[pokesUpgrades];
         UpdatePokes();
+        pickupSpawner.SpawnNewPickups();
         spawner.Spawn();
 
     }

@@ -31,7 +31,15 @@ public class UpgradeSlot : MonoBehaviour
             btn.interactable = false;
         }
 
-        costText.text = costs[currentUpgrade].ToString() + " $";
+        
+        if(currentUpgrade == costs.Length -1)
+        {
+            costText.text = "Max";
+        } else
+        {
+            costText.text = costs[currentUpgrade].ToString() + " $";
+        }
+        
     }
 
     public void Upgrade()

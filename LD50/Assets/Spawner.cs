@@ -58,6 +58,7 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         var newPlane = Instantiate(planePrefab, transform.position, Quaternion.identity);
         newPlane.transform.parent = transform;
         FindObjectOfType<CameraFollow>().InitiateSpawnPan(newPlane.transform);

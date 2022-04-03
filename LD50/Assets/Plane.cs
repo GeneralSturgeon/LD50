@@ -18,11 +18,12 @@ public class Plane : MonoBehaviour
     public float baseClickForce;
     public float baseClickTorque;
     public AnimationCurve clickCurve;
+    public float baseClickXForce;
 
 
     private float currentLift;
     private float currentSpeedAddition;
-    private const float maxRot = 80f;
+    private const float maxRot = 60f;
 
     [SerializeField]
     private Transform spawner;
@@ -31,6 +32,10 @@ public class Plane : MonoBehaviour
     [SerializeField]
     private PolygonCollider2D col;
     private float startXpos;
+
+    private float tick = 0f;
+    private const float WAIT_TIME = 0.2f;
+    private bool isWaiting = false;
 
     private void Awake()
     {
@@ -81,7 +86,12 @@ public class Plane : MonoBehaviour
         // Calculate lift addition
         if (rb.rotation <= minAOA && rb.rotation >= -minAOA)
         {
-            currentLift = liftCurve.Evaluate(Mathf.InverseLerp(-minAOA, minAOA, rb.rotation)) * baseLift * rb.velocity.magnitude;
+            currentLift = liftCurve.Evaluate(Mathf.InverseLerp(-minAOA, minAOA, rb.rotation)) * baseLift * rb.velocity.magnitude * Mathf.InverseLerp(100f, -3f, transform.position.y);
+            Debug.Log(Mathf.InverseLerp(100f, -3f, transform.position.y));
+        }
+        else
+        {
+            currentLift = 0f;
         }
 
         // Calculate speed addition
@@ -122,20 +132,36 @@ public class Plane : MonoBehaviour
             GameController.instance.UpdateDistance(transform.position.x - startXpos);
         }
 
-        
+        if (isWaiting)
+        {
+            tick += Time.fixedDeltaTime;
+            if(tick >= WAIT_TIME)
+            {
+                isWaiting = false;
+            }
+        }
 
     }
 
     public void AddForceOnClick()
     {
-        //
-        //float distance = (transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y))).magnitude - 10f;
-        //float distanceMultiplier = clickCurve.Evaluate(distance);
 
         // Adds upward rotation
         rb.AddTorque(baseClickTorque);
         // Add upward force
-        rb.AddForce(new Vector2(0f, baseClickForce));
+        rb.AddForce(new Vector2(baseClickXForce, baseClickForce));
+    }
+
+    public void AddForceOnPickup()
+    {
+        if (!isWaiting)
+        {
+            // Adds upward rotation
+            rb.AddTorque(baseClickTorque);
+            // Add upward force
+            rb.AddForce(new Vector2(baseClickXForce, baseClickForce));
+            isWaiting = true;
+        } 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -147,6 +173,12 @@ public class Plane : MonoBehaviour
             GameController.instance.OpenCrashPanel();
             transform.SetParent(null);
             Destroy(this);
+        }
+
+        if (collision.gameObject.CompareTag("pickup"))
+        {
+            AddForceOnPickup();
+            collision.gameObject.GetComponent<Pickup>().Hide();
         }
     }
 
