@@ -12,12 +12,18 @@ public class Pickup : MonoBehaviour
    public void Kill()
     {
         gameObject.SetActive(false);
-        Destroy(gameObject, 1f);
     }
 
     public void Hide()
     {
         rend.enabled = false;
         col.enabled = false;
+    }
+
+    public void Restart()
+    {
+        gameObject.SetActive(true);
+        rend.enabled = true;
+        col.enabled = true;
     }
 }

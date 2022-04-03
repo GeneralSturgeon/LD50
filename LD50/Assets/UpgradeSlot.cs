@@ -20,6 +20,8 @@ public class UpgradeSlot : MonoBehaviour
     private TextMeshProUGUI costText;
     [SerializeField]
     private Image[] dots;
+    [SerializeField]
+    private Color newColor;
 
     public void UpdateUI()
     {
@@ -46,7 +48,7 @@ public class UpgradeSlot : MonoBehaviour
     {
         GameController.instance.Upgrade(upgradeType);
         GameController.instance.RemoveCurrency(costs[currentUpgrade]);
-        dots[currentUpgrade].color = Color.green;
+        dots[currentUpgrade].color = newColor;
         currentUpgrade++;
         GameController.instance.UpdateUI();
     }
